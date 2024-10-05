@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AuthContext } from '../Context/Context';
+import { AuthContext } from '../../../Context/Context';
 
 const ResultPage = () => {
     const { email } = useContext(AuthContext);

@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext, useMemo } from 'react';
-import { AuthContext } from '../Context/Context';
+import { AuthContext } from '../../Context/Context';
 import axios from 'axios';
 
 const UserProfile = () => {

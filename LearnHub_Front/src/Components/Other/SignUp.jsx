@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Context/Context.jsx';
+import { AuthContext } from '../../Context/Context.jsx';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
