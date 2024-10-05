@@ -1,0 +1,47 @@
+@media (max-width: 768px) {
+    .max-w-4xl {
+        max-width: 100%;
+    }
+
+    .text-3xl {
+        font-size: 2xl;
+    }
+
+    .text-2xl {
+        font-size: xl;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.animate-glow {
+    animation: glow 1.5s infinite alternate;
+}
