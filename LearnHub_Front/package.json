@@ -12,6 +12,9 @@
   "dependencies": {
     "@coreui/icons": "^3.0.1",
     "@coreui/icons-react": "^2.3.0",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.2",
     "axios": "^1.7.5",
     "context": "^3.0.31",
     "prop-types": "^15.8.1",

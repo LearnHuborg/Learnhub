@@ -5,7 +5,7 @@ import QuizPage from './Components/QuizPage';
 import ResultPage from './Components/ResultPage';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
-import Layout from './Components/Layout';
+import Layout from './Components/Layouts/Layout.jsx';
 import AuthRoute from './Routes/Auth';
 import VerifyOTP from './Components/VerifyOtp';
 import { AuthProvider } from './Context/Context';

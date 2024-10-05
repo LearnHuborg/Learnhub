@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Context/Context';
+import { AuthContext } from '../../Context/Context';
 
-const Navbar = () => {
+const Header = () => {
     const navigate = useNavigate();
     const { isAuthenticated, logout } = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -79,4 +79,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Header;
