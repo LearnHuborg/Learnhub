@@ -1,5 +1,5 @@
-import Header from './header';
-import Footer from './footer';
+import Header from './Header'
+import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
@@ -7,7 +7,7 @@ const Layout = () => {
         <div className='flex flex-col gap-3'>
             <Header />
             <main>
-         <Outlet />
+               <Outlet />
             </main>
             <Footer/>
         </div>

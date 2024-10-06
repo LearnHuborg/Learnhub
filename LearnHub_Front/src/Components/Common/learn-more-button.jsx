@@ -11,7 +11,8 @@ export const LearnMoreButton = ({ to }) => {
           boxShadow: "0px 0px 15px 0px rgba(0, 0, 0, 0.25)",
         }}
       >
-        Learn More
+        <span className="font-medium">Learn More</span>
+        
         <img src={ArrowRight} alt="" />
       </button>
     </Link>
