@@ -24,13 +24,13 @@ const HeadingWithDescription = ({ heading, description }) => {
 
 const ImageBox = ({ imgUrl }) => {
     return (
-        <div className="w-[500px] h-[380px] relative rounded-[10px] shadow-[0_0_15px_1px_rgba(0,0,0,0.5)] overflow-hidden ursor-pointer">
+        <div className="w-[580px] h-[380px] relative rounded-[10px] overflow-hidden cursor-pointer group">
             <img
                 src={imgUrl}
                 alt=""
-                className=" object-cover w-[110%] h-[105%] mb-10"
+                className=" object-cover w-[580px] h-[380px] transition-all duration-500 ease-in-out group-hover:blur-sm group-hover:brightness-10"
             />
-            <div className=" absolute top-[45%] left-[32%] z-0">
+            <div className="absolute top-[45%] left-[32%] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 <LearnMoreButton to={'/quiz'}/>
             </div>
         </div>

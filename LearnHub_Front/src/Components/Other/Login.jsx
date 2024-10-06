@@ -23,15 +23,11 @@ const Login = () => {
             if (!response.ok) {
                 const errorData = await response.json();
                 toast.error(errorData.message || 'User Not Found. Please Sign Up.');
-                setTimeout(() => {
-                    navigate('/signup');
-                }, 3000);
                 return;
             }
 
             const data = await response.json();
-            login(data.token, data.username, data.email, data.userId);
-            navigate('/');
+            console.log(data.token, data.username, data.email, data.userId);
 
         } catch (error) {
             toast.error('Login failed: ' + error.message);

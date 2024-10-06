@@ -3,6 +3,38 @@ import { Button } from "../Common/button";
 import { CodeXWithIcon } from "../Common/codeX-with-icon";
 import { FormInput } from "../Common/form-input";
 import { FormPassword } from "../Common/form-password";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from '../../Context/Context';
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+      const response = await fetch('https://quiz-app-sandy-one.vercel.app/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+          const errorData = await response.json();
+          toast.error(errorData.message || 'User Not Found. Please Sign Up.');
+          setTimeout(() => {
+              navigate('/signup');
+          }, 3000);
+          return;
+      }
+
+      const data = await response.json();
+      login(data.token, data.username, data.email, data.userId);
+      navigate('/');
+
+  } catch (error) {
+      toast.error('Login failed: ' + error.message);
+  }
+};
 
 export const LoginForm = () => {
   return (
@@ -25,6 +57,7 @@ export const LoginForm = () => {
 
           <Button
             text={"Login"}
+            handleClick={handleSubmit}
             style={{
               paddingTop: "8px",
               paddingBottom: "8px",
@@ -41,6 +74,7 @@ export const LoginForm = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer />
     </div>
   );
 };
