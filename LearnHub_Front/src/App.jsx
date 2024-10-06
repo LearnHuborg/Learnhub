@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Home from './Components/Home';
-import QuizPage from './Components/QuizPage';
-import ResultPage from './Components/ResultPage';
-import Login from './Components/Login';
-import SignUp from './Components/SignUp';
+import Home from './Components/Other/Home.jsx';
+import QuizPage from './Components/Modules/Quiz/QuizPage.jsx';
+import ResultPage from './Components/Modules/Quiz/ResultPage.jsx';
+import Login from './Components/Other/Login.jsx';
+import SignUp from './Components/Other/SignUp.jsx';
 import Layout from './Components/Layouts/Layout.jsx';
 import AuthRoute from './Routes/Auth';
-import VerifyOTP from './Components/VerifyOtp';
+import VerifyOTP from './Components/Other/VerifyOtp';
 import { AuthProvider } from './Context/Context';
-import QuizConfig from './Components/QuizConfig';
-import About from './Components/About';
-import ProfilePage from "./Components/UserProfile";
+import QuizConfig from './Components/Modules/Quiz/QuizConfig';
+import About from './Components/About/About.jsx';
+import ProfilePage from "./Components/Other/UserProfile";
 
 const OfflineScreen = () => {
   return (

@@ -1,7 +1,7 @@
-import QuizAppModule from "../../../assets/icons/quiz-app-module.png"
-import CodePracticeModule from "../../../assets/icons/code-practice-module.png"
-import AskToTeacherModule from "../../../assets/icons/ask-to-teacher-module.png"
-import TypingModule from "../../../assets/icons/typing-module.png"
+import QuizAppModule from "../../src/assets/icons/Quiz_Logo.png"
+import CodePracticeModule from "../../src/assets/icons/code-practice-module.png"
+import AskToTeacherModule from "../../src/assets/icons/ask-to-teacher-module.png"
+import TypingModule from "../assets/icons/code-practice-module.png"
 
 
 export const ModulesData = [

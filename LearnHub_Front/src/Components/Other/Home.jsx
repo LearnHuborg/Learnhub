@@ -1,7 +1,6 @@
 import { Divider } from "@mui/material";
-import React from "react";
-import { ModulesData } from "./utils";
-import ModuleDetails from "./module-details";
+import { ModulesData } from "../../utils/utils";
+import ModuleDetails from "../Modules/Resusables/index";
 
 function HeroSection() {
   return (
@@ -17,15 +16,15 @@ function HeroSection() {
             background: "#000352",
           }}
         />
-          </div>
-          <div className="flex flex-col gap-[5rem] justify-center place-items-center">
-              
-          {
-              ModulesData.map((module, index) => (
-                  <ModuleDetails key={index} imgUrl={module.imgUrl} heading={module.heading} description={module.description} index={index}/>
-              ))
-          }
-          </div>
+      </div>
+      <div className="flex flex-col gap-[5rem] justify-center place-items-center">
+
+        {
+          ModulesData.map((module, index) => (
+            <ModuleDetails key={index} imgUrl={module.imgUrl} heading={module.heading} description={module.description} index={index} />
+          ))
+        }
+      </div>
     </div>
   );
 }
