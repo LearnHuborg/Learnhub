@@ -1,11 +1,10 @@
-export const Button = ({ text, style ,handleClick}) => {
+export const Button = ({ text, style, handleClick }) => {
   return (
-      <button
-          onClick={handleClick}
+    <button
+      onClick={handleClick}
       className="text-[16px] font-semibold text-white"
-          style={{
-              height:'fit-content',
-              
+      style={{
+        height: 'fit-content',
         padding: "5px 15px 5px 15px",
         borderRadius: "5px",
         background: "#000",
