@@ -1,24 +1,31 @@
-import { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../Context/Context';
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/Context";
+import { Button } from "../Common/button";
 
 const Header = () => {
-    const navigate = useNavigate();
-    const { isAuthenticated, logout } = useContext(AuthContext);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { isAuthenticated, logout } = useContext(AuthContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleLogout = () => {
-        logout();
-        navigate('/home');
-    };
+  const handleLogout = () => {
+    logout();
+    navigate("/home");
+  };
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    return (
-        <nav className="p-4 text-white bg-gray-900">
-            <div className="container flex items-center justify-between mx-auto">
+  return (
+    <nav
+      className="p-4  flex justify-between place-items-center"
+      style={{
+        background: "rgba(255, 255, 255, 0.2)",
+        backdropFilter: blur("4px"),
+      }}
+    >
+      {/* <div className="container flex items-center justify-between mx-auto">
                 <button
                     onClick={() => navigate('/home')}
                     className="relative px-4 py-2 text-lg font-extrabold text-white transition-transform transform rounded-full shadow-lg sm:text-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
@@ -74,9 +81,22 @@ const Header = () => {
                         </>
                     )}
                 </div>
-            </div>
-        </nav>
-    );
+            </div> */}
+
+      <p
+        className="text-[36px] font-bold text-[#000] cursor-pointer"
+        onClick={() => navigate("/")}
+      >
+        LearnHub
+      </p>
+
+      <div className="flex gap-5">
+        <Button text={"Login"} handleClick={() => navigate("/login")} />
+
+        <Button text={"Sign Up"} handleClick={() => navigate("/signup")} />
+      </div>
+    </nav>
+  );
 };
 
 export default Header;

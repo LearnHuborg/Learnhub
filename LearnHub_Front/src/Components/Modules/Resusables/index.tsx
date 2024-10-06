@@ -1,4 +1,5 @@
 import React from "react";
+import { LearnMoreButton } from "../../Common/learn-more-button";
 
 const HeadingWithDescription = ({ heading, description }) => {
     return (
@@ -23,12 +24,15 @@ const HeadingWithDescription = ({ heading, description }) => {
 
 const ImageBox = ({ imgUrl }) => {
     return (
-        <div className="w-[500px] h-[380px] rounded-[10px] shadow-[0_0_15px_1px_rgba(0,0,0,0.5)] overflow-hidden ursor-pointer">
+        <div className="w-[500px] h-[380px] relative rounded-[10px] shadow-[0_0_15px_1px_rgba(0,0,0,0.5)] overflow-hidden ursor-pointer">
             <img
                 src={imgUrl}
                 alt=""
                 className=" object-cover w-[110%] h-[105%] mb-10"
             />
+            <div className=" absolute top-[45%] left-[32%] z-0">
+                <LearnMoreButton to={'/quiz'}/>
+            </div>
         </div>
     );
 };

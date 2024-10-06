@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-      <div className='w-[100vw] mt-4 ' style={{
+      <div className='w-[100vw] mt-4' style={{
         background: 'rgba(0, 0, 0, 0.20)',
         backdropFilter: blur('7.5px')
       }}>

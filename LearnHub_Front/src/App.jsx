@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Home from './Components/Other/Home.jsx';
+import Home from './Components/Home/home.jsx';
 import QuizPage from './Components/Modules/Quiz/QuizPage.jsx';
 import ResultPage from './Components/Modules/Quiz/ResultPage.jsx';
 import Login from './Components/Other/Login.jsx';
 import SignUp from './Components/Other/SignUp.jsx';
-import Layout from './Components/Layouts/Layout.jsx';
+import Layout from './Components/Layouts/layout.jsx';
 import AuthRoute from './Routes/Auth';
 import VerifyOTP from './Components/Other/VerifyOtp';
 import { AuthProvider } from './Context/Context';
 import QuizConfig from './Components/Modules/Quiz/QuizConfig';
-import About from './Components/About/About.jsx';
+import About from './Components/About/about.jsx';
 import ProfilePage from "./Components/Other/UserProfile";
+import { LoginForm } from './Components/forms/login-form.jsx';
 
 const OfflineScreen = () => {
   return (
@@ -50,7 +51,7 @@ const App = () => {
               <Route index element={<Home />} />
               <Route path="signup" element={<SignUp />} />
               <Route path="/verify-otp" element={<VerifyOTP />} />
-              <Route path="login" element={<Login />} />
+              <Route path="login" element={<LoginForm />} />
               <Route path="/about" element={<About />} />
               <Route path="/profile" element={<AuthRoute component={ProfilePage} />} />
               <Route path="quiz-config" element={<AuthRoute component={QuizConfig} />} />
