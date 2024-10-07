@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
       date: { type: Date, default: Date.now },
     },
   ],
-  verified: { type: Boolean, default: false },
+  verified:{ type: Boolean, default: false },
   verificationToken: { type: String },
 });
 
