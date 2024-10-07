@@ -1,1 +1,1 @@
-const ram = 11;
+const ram = 12;
