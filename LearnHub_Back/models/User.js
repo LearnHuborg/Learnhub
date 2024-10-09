@@ -5,13 +5,8 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  scores: [
-    {
-      quizId: { type: String },
-      score: { type: Number },
-      date: { type: Date, default: Date.now },
-    },
-  ],
+  coins: { type: Number, default: 0 },
+  profileLevel: { type: Number, default: 1 }, 
   verified: { type: Boolean, default: false },
   verificationToken: { type: String },
 });
