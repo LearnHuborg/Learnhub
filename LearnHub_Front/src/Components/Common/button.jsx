@@ -1,7 +1,8 @@
-export const Button = ({ text, style, handleClick }) => {
+export const Button = ({ text, style, handleClick,type }) => {
   return (
     <button
       onClick={handleClick}
+      type={type}
       className="text-[16px] font-semibold text-white"
       style={{
         height: 'fit-content',

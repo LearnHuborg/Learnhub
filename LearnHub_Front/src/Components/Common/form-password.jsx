@@ -3,7 +3,7 @@ import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { useState } from "react";
 
-export const FormPassword = ({ placeholder }) => {
+export const FormPassword = ({ value,placeholder, onChange }) => {
   const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   return (
@@ -11,6 +11,8 @@ export const FormPassword = ({ placeholder }) => {
       type={isPasswordVisible ? "text" : "password"}
       placeholder={placeholder}
       name="password"
+      value={value}
+      onChange={(e) => onChange("password",e.target.value)}
       sx={{
         padding: 0.6,
         borderRadius: "5px",

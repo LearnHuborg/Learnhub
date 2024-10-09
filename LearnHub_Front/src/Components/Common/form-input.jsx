@@ -1,11 +1,13 @@
 import { Input } from "@mui/material";
 
-export const FormInput = ({ type, placeholder, name }) => {
+export const FormInput = ({ value,type, placeholder, name, onChange }) => {
   return (
     <Input
       type={type}
       placeholder={placeholder}
       name={name}
+      value={value}
+      onChange={(e) => onChange(name,e.target.value)}
       sx={{
         padding: 0.6,
         borderRadius: "5px",

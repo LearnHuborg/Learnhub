@@ -12,6 +12,8 @@ import QuizConfig from './Components/Modules/Quiz/QuizConfig';
 import About from './Components/About/About.jsx';
 import ProfilePage from "./Components/Other/UserProfile";
 import { LoginForm } from './Components/forms/login-form.jsx';
+import { SignUpForm } from './Components/forms/sign-up-form.jsx';
+import VerifyOTPInput from './Components/forms/verify-otp-input.jsx';
 
 const OfflineScreen = () => {
   return (
@@ -48,8 +50,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
-              <Route path="signup" element={<SignUp />} />
-              <Route path="/verify-otp" element={<VerifyOTP />} />
+              <Route path="signup" element={<SignUpForm />} />
+              <Route path="/verify-otp" element={<VerifyOTPInput />} />
               <Route path="login" element={<LoginForm />} />
               <Route path="/about" element={<About />} />
               <Route path="/profile" element={<AuthRoute component={ProfilePage} />} />
