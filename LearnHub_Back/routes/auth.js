@@ -1,14 +1,12 @@
+const CalculateProfileLevel = require('../utils/CalculateProfileLevel');
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
-const Score = require("../models/Score");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const router = express.Router();
-
 const JWT_SECRET = process.env.JWT_SECRET_KEY;
-
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
@@ -154,6 +152,8 @@ router.post("/verify-otp", async (req, res) => {
       username: tempUser.username,
       email: tempUser.email,
       password: tempUser.password,
+      coins: 0,
+      profileLevel: 1,
       verified: true,
     });
     await newUser.save();
@@ -199,6 +199,8 @@ router.post("/login", async (req, res) => {
       userId: user._id,
       username: user.username,
       email: user.email,
+      coins: user.coins,
+      profileLevel: user.profileLevel,
     });
   } catch (error) {
     console.error(error);
@@ -206,41 +208,42 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/saveScore", async (req, res) => {
-  const { userId, quizId, score } = req.body;
+router.post("/updateCoins", async (req, res) => {
+  const { email, coinsEarned } = req.body;
 
-  if (!userId || !quizId || score === undefined) {
-    return res.status(400).json({ message: "All fields are required" });
+  if (!email || coinsEarned === undefined) {
+    return res.status(400).json({ message: "Email and coins earned are required" });
   }
 
-  if (typeof score !== "number" || !Number.isFinite(score)) {
-    return res.status(400).json({ message: "Invalid score value" });
+  if (typeof coinsEarned !== "number" || !Number.isFinite(coinsEarned)) {
+    return res.status(400).json({ message: "Invalid coins value" });
   }
 
   try {
-    const user = await User.findOne({ email: userId });
+    const user = await User.findOne({ email });
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const existingScoreIndex = user.scores.findIndex(
-      (s) => s.quizId === quizId
-    );
-
-    if (existingScoreIndex !== -1) {
-      user.scores[existingScoreIndex] = { quizId, score, date: new Date() };
-    } else {
-      user.scores.push({ quizId, score, date: new Date() });
-    }
+    user.coins += coinsEarned;
+    const newProfileLevel = CalculateProfileLevel(user.coins);
+    user.profileLevel = newProfileLevel;
 
     await user.save();
-    res.status(200).json({ message: "Score saved successfully" });
+
+    res.status(200).json({
+      message: "Coins and profile level updated successfully",
+      coins: user.coins,
+      profileLevel: user.profileLevel,
+    });
   } catch (error) {
-    console.error("Save Score Error:", error);
+    console.error("Error updating coins:", error);
     res.status(500).json({ message: "Database error", error: error.message });
   }
 });
+
+
 
 router.get("/userProfile/:userId", async (req, res) => {
   const { userId } = req.params;
