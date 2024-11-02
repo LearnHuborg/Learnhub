@@ -67,7 +67,7 @@ export const SignUpForm = () => {
 
     try {
       const response = await fetch(
-        "https://codelearn-swart.vercel.app/api/auth/login",
+        "https://codelearn-swart.vercel.app/api/auth/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -10,7 +10,17 @@ export const getUserAvatars = async () => {
 export const setUserAvatar = async (email, imgUrl) => {
   const res = await axios.put(apiUrl + "/api/auth/update-profile-image", {
     email,
-    imgUrl,
+    profileImageUrl: imgUrl,
   });
   return res;
 };
+
+export const getProfile = async (userId) => {
+  const res = await axios.get(apiUrl + `/api/auth/userProfile/${userId}`);
+  return res;
+};
+
+export const getLeaderBoard = async () => {
+  const res = await axios.get(apiUrl + '/api/auth/leaderboard');
+  return res;
+}

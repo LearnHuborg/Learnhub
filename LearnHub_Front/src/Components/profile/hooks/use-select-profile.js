@@ -8,7 +8,7 @@ export const useSelectProfile = () => {
   useEffect(() => {
     setIsLoading(true);
     const getData = async () => {
-      const { data } = await getUserAvatar();
+      const { data } = await getUserAvatars();
       if (data) {
         setProfiles(data.profiles);
       }

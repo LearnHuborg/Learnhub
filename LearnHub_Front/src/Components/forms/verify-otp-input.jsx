@@ -38,7 +38,7 @@ const VerifyOTPInput = () => {
 
     try {
       const response = await fetch(
-        "https://quiz-app-sandy-one.vercel.app/api/auth/verify-otp",
+        "https://codelearn-swart.vercel.app/api/auth/verify-otp",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
