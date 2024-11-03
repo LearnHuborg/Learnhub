@@ -21,6 +21,7 @@ import { SignUpForm } from "./Components/forms/sign-up-form.jsx";
 import VerifyOTPInput from "./Components/forms/verify-otp-input.jsx";
 import { SelectProfilePicture } from "./Components/profile/select-profile-picture.jsx";
 import { UserProfile } from "./Components/profile/user-profile.jsx";
+import { LeaderBoard } from "./Components/leaderboard/index.jsx";
 
 const OfflineScreen = () => {
   return (
@@ -68,6 +69,7 @@ const App = () => {
                 element={<SelectProfilePicture />}
               />
               <Route path="/profile" element={<UserProfile />} />
+              <Route path="/leaderboard" element={<LeaderBoard />} />
               <Route
                 path="quiz-config"
                 element={<AuthRoute component={QuizConfig} />}

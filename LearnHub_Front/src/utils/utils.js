@@ -84,3 +84,10 @@ export const coinsToGo = (currentCoins) => {
     };
   }
 };
+
+export const getDays = (date) => {
+  const inputDate = new Date(date);
+  const today = new Date();
+  const differenceInTime = today - inputDate;
+  return Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+};
