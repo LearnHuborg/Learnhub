@@ -53,7 +53,7 @@ const VerifyOTPInput = () => {
 
         toast.success("OTP verified successfully!", { position: "top-center" });
         setTimeout(() => {
-          navigate("/");
+          navigate("/select-profile-pic");
         }, 1000);
       } else {
         toast.error(
