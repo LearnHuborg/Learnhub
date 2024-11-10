@@ -33,7 +33,6 @@ const QuizPage = () => {
                         amount: numQuestions,
                         category,
                         difficulty,
-                        type,
                     },
                 });
                 localStorage.setItem(cacheKey, JSON.stringify(response.data.results));
@@ -104,7 +103,7 @@ const QuizPage = () => {
     }, [currentQuestionIndex, questions.length]);
 
     const handleFinishTest = useCallback(() => {
-        navigate('/result', { state: { score, quizId } });
+        navigate('/quiz-config/quiz/result', { state: { score, quizId } });
     }, [navigate, score, quizId]);
 
     if (loading) {

@@ -61,24 +61,20 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="signup" element={<SignUpForm />} />
-              <Route path="/verify-otp" element={<VerifyOTPInput />} />
+              <Route path="verify-otp" element={<VerifyOTPInput />} />
               <Route path="login" element={<LoginForm />} />
-              <Route path="/about" element={<About />} />
-              <Route
-                path="/select-profile-pic"
-                element={<SelectProfilePicture />}
-              />
-              <Route path="/profile" element={<UserProfile />} />
-              <Route path="/leaderboard" element={<LeaderBoard />} />
-              <Route
-                path="quiz-config"
-                element={<AuthRoute component={QuizConfig} />}
-              />
-              <Route path="quiz" element={<AuthRoute component={QuizPage} />} />
-              <Route
-                path="result"
-                element={<AuthRoute component={ResultPage} />}
-              />
+              <Route path="about" element={<About />} />
+              <Route path="select-profile-pic" element={<SelectProfilePicture />} />
+              <Route path="profile" element={<UserProfile />} />
+              <Route path="leaderboard" element={<LeaderBoard />} />
+              
+              {/* Protected Routes */}
+              <Route element={<AuthRoute />}>
+                <Route path="quiz-config" element={<QuizConfig />} />
+                <Route path="quiz-config/quiz" element={<QuizPage />} />
+                <Route path="quiz-config/quiz/result" element={<ResultPage />} />
+              </Route>
+              
             </Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

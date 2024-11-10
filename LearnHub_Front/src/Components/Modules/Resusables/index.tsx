@@ -31,7 +31,7 @@ const ImageBox = ({ imgUrl }) => {
                 className=" object-cover w-[580px] h-[380px] transition-all duration-500 ease-in-out group-hover:blur-sm group-hover:brightness-10"
             />
             <div className="absolute top-[45%] left-[32%] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                <LearnMoreButton to={'/quiz'}/>
+                <LearnMoreButton to={'/quiz-config'}/>
             </div>
         </div>
     );
