@@ -66,11 +66,7 @@ export const LoginForm = () => {
       >
 
         <p className="text-[32px] text-center font-medium text-black ">
-          Login to your <br /> account!
-          <label id='checkbox'>checkbox</label>
-          <input type="checkbox" id='' />
-
-        </p>
+          Login to your <br /> account!</p>
 
         <div className="flex flex-col gap-2 w-[45%]">
           <FormInput
