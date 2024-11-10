@@ -64,8 +64,12 @@ export const LoginForm = () => {
           backdropFilter: blur(2),
         }}
       >
+
         <p className="text-[32px] text-center font-medium text-black ">
           Login to your <br /> account!
+          <label id='checkbox'>checkbox</label>
+          <input type="checkbox" id='' />
+
         </p>
 
         <div className="flex flex-col gap-2 w-[45%]">
@@ -101,8 +105,8 @@ export const LoginForm = () => {
             Sign up!
           </Link>
         </p>
-      </div>
+      </div >
       <ToastContainer />
-    </div>
+    </div >
   );
 };

@@ -61,6 +61,10 @@ const Login = () => {
                             className="w-full p-3 transition duration-300 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             required
                         />
+                        <div>
+                        <label id='checkbox'/>
+                        <input type="checkbox" id='checkbox'/>
+                        </div>
                         <svg className="absolute w-5 h-5 text-gray-500 top-3 right-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 11V7a4 4 0 118 0v4m-4 7a4 4 0 110-8 4 4 0 010 8z" />
                         </svg>
